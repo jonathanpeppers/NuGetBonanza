@@ -75,6 +75,21 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.0-alpha.1.25071.14" />
+		<!-- Popular NuGets -->
+		<PackageReference Include="CommunityToolkit.Maui" Version="11.1.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+		<PackageReference Include="GoogleGson" Version="2.12.1" Condition=" '$(TargetPlatformIdentifier)' == 'Android' " />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 	</ItemGroup>
+
+	<Target Name="_RootEverything" AfterTargets="ComputeResolvedFilesToPublishList">
+		<ItemGroup>
+			<TrimmerRootAssembly Include="CommunityToolkit.Maui" RootMode="All" />
+			<TrimmerRootAssembly Include="CommunityToolkit.Maui.Core" RootMode="All" />
+			<TrimmerRootAssembly Include="CommunityToolkit.Mvvm" RootMode="All" />
+			<TrimmerRootAssembly Include="GoogleGson" RootMode="All" Condition=" '$(TargetPlatformIdentifier)' == 'Android' " />
+			<TrimmerRootAssembly Include="Newtonsoft.Json" RootMode="All" />
+		</ItemGroup>
+	</Target>
 
 </Project>
