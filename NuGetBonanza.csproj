@@ -80,6 +80,7 @@
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="GoogleGson" Version="2.12.1" Condition=" '$(TargetPlatformIdentifier)' == 'Android' " />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
 	</ItemGroup>
 
 	<Target Name="_RootEverything" AfterTargets="ComputeResolvedFilesToPublishList">
@@ -89,6 +90,7 @@
 			<TrimmerRootAssembly Include="CommunityToolkit.Mvvm" RootMode="All" />
 			<TrimmerRootAssembly Include="GoogleGson" RootMode="All" Condition=" '$(TargetPlatformIdentifier)' == 'Android' " />
 			<TrimmerRootAssembly Include="Newtonsoft.Json" RootMode="All" />
+			<TrimmerRootAssembly Include="SQLite-net" RootMode="All" />
 		</ItemGroup>
 	</Target>
 
