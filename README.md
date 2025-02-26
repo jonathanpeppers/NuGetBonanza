@@ -9,6 +9,7 @@ Note that I mostly tested Android here, adding these popular packages to a .NET 
 <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 <PackageReference Include="GoogleGson" Version="2.12.1" Condition=" '$(TargetPlatformIdentifier)' == 'Android' " />
 <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+<PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
 ```
 
 To try it with at least .NET 10:
